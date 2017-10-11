@@ -23,6 +23,9 @@ class MusicTableViewController : MasterViewController, UISearchResultsUpdating, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //This is most importent for page navigation, the details are available in plist
+        self.pageName = "MusicInformationPage"
+        self.segueAlias = "musicInformation"
         
         initialize()
         setSearchBarToTableView()
@@ -79,6 +82,15 @@ class MusicTableViewController : MasterViewController, UISearchResultsUpdating, 
         definesPresentationContext = true
     }
     func itemSelected(_ sender: Any, item: Any, itemIdentifier: String?, indexPath: IndexPath) {
+        //These two method calls will take care of navigating you to the next page. Please make sure to set the page name and segue name in viewdidload and add the details in masterinfo plist
+        self.initializeSceneConfig(bundle: nil)
+        if self._destinationVC is MusicInfoDetailViewController {
+            if let destination = self._destinationVC as? MusicInfoDetailViewController{
+                destination.delegate = self
+                destination.selectedItem = item as? MusicResults
+            }
+        }
+        self.navigateToScene()
         //NOOP
     }
     

@@ -32,10 +32,17 @@ public class MasterTableViewCellFactory: NSObject {
 }
 
 open class MasterTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
+    
+    //Make sure to set the sections, even if you don't have any specific section have it empty.
     public var sections:[String]? = [String]()
+    
+    //Even if you want to print some test data, setting up the list is mandatory.
+    //The list values are in the form of [Int:[Any]]
     public var list:[Int:[Any]] = [Int:[Any]]()
+    
+    //It plays the vital role to transition the page from one view to the other view
     public var itemDelegate: MasterItemDelegate?
-    //
+    //It needs to be set in table view viewdidload method to create a cell and set the table data
     public var cellFactory = MasterTableViewCellFactory()
     
     override public init(frame: CGRect, style: UITableViewStyle) {

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pageConfigurations</key>
+	<dict>
+		<key>MusicInformationPage</key>
+		<dict>
+			<key>segues</key>
+			<dict>
+				<key>musicInformation</key>
+				<dict>
+					<key>destinationVC</key>
+					<string>MusicInfoDetailViewController</string>
+					<key>storyBoard</key>
+					<string>Main</string>
+					<key>viewName</key>
+					<string>MusicInfoDetail</string>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

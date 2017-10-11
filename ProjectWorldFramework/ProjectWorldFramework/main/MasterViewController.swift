@@ -18,7 +18,7 @@ open class MasterViewController: UIViewController {
     public typealias completionBlock = (() -> Void)
     
     //MARK:- Property Observers
-    //Please make sure to set pageName adn segueAlias in every controller to have the page navigation properly
+    //Please make sure to set pageName and segueAlias in every controller to have the page navigation properly
     public var pageName = EMPTY_STRING {
         didSet {
             if !self.segueAlias.isEmpty {
@@ -42,6 +42,8 @@ open class MasterViewController: UIViewController {
     
     //MARK:- Navingation&Presentation handlers
     //method is used to initialize the destination storyboard with view controller
+    //Make sure TODO:
+    //Assign the view name in storyboard attribute inspector title
     public func initializeSceneConfig(bundle: Bundle?) {
         if _nextstoryBoard == nil { return }
         if _nextViewName == nil { return }
